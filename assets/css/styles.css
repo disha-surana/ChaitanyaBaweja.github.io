@@ -1105,7 +1105,13 @@ body {
 }
 
 .Shared-Navigation-logo {
-    position: absolute;  
+    position: relative;
+}
+.Shared-Navigation-logo img{
+    vertical-align: middle;
+    position: relative;
+    display: block;
+    margin:auto;
 }
 
 .Shared-Navigation-innerContainer {
