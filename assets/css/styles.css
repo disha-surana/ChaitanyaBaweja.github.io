@@ -108,6 +108,8 @@ sup {
 
 img {
     border-style: none
+    display:block;
+    margin:auto;
 }
 
 svg:not(:root) {
