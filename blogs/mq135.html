@@ -72,12 +72,15 @@ The MQ135 gas sensor detects a number of gases like ammonia, CO2, SO2 etc. colle
 <p>Moreover the datasheet provided with the sensor does not provideclear information about the characteristics of sensor. The graph in the Figure 3 indicating the sensitivity characteristics of the sensor does not provide accurate readings for individual gases. Datasheet does not tell us much for detecting concentration scope for CO2 gas, as the graph is onlyprovided from 0.1 to 100ppm. Datasheet provides little information about the temperature and humidity dependence of the output resistance of the sensor.</p>
 <div style="text-align: center"><figure><img src=
 "../assets/img/mq135temp.png"><figcaption>The typical sensitivity characteristics of the MQ-135. Temp: 20 Humidity: 65%, RL=20kOhm Ro: sensor resistance at 100ppm of NH3 in the clean air. Rs: sensor resistance at various concentrations of gases</figcaption></figure></div>
-<h2>Future</h2>
+<h2>Gironi’s Formulation</h2>
+<p>DavideGironi, a software engineer from "Università degli Studi", Milano worked on various aspects of the MQ135 Gas Sensor. He analysed the sensitivity characteristics of the MQ-135 from the poorly documented datasheet of this sensor. He used the graph (Figure3) to convert the output of sensor to the related ppm characteristics for the gas under test. After studying the sensitivity graph of MQ135 (Figure3), Gironi felt that the resistance ratio of the sensor (RS/RO) and the gas concentration (ppm) are related as a power function. Using power regression, he obtained the scaling factor (a), and the exponential factor (b), for the gas. He used both these parameters to calculate the corresponding concentration. He also proposed that the calibration of RScan be done in clean air once stable readings are being received from the sensor. The concentration scope of a particular gas was identified using datasheet leading to the computation of the limit for RS/RO. Finally, a Matlab script was used for power regression and polynomial curve fitting. Raw values were converted to calculated resistance and an arbitrary value of RO, was used in the mathematical formulation of the microcontroller. The RO calibration is very important because every MQ135 sensor is different from the other and they require individual calibration.</p>
+<h2>Proposed System</h2>
       <p>
-We intend to expand our operations to a much larger scale. Our projects will get more ambitious with time and our commitment stronger. We need your support. Are you ready to make a difference?
+The proposed system consists of the MQ135 sensor, Microcontroller Development Board (Arduino UNO), DHT-11 Temperature and Humidity Sensor and Software support with display. The block diagram of overall system is given indicating the steps design to convert analog signals from MQ135 sensor and DHT11 to their corresponding values in PPM and temperature and humidity. Design includes development of the code for Arduino microcontroller and a MATLAB script for plotting Serial data from Arduino directly to MATLAB. Excel is used to produce the real time graph plotting of the gas concentration detected for the analysis and calibration purpose.  
 </p>
-
-
+<div style="text-align: center"><figure><img src=
+"../assets/img/circuit.png"><figcaption>System Circuit Connection Design</figcaption></figure></div>
+<p> Results and further explaination are documented in the <a href="https://www.ijarcsse.com/docs/papers/Volume_6/4_April2016/V6I4-0130.pdf" target="_blank">Research Paper</a>.</p>
 
       </div>
 
